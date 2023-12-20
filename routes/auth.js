@@ -86,7 +86,7 @@ router.patch("/verify", async (req, res) => {
         const {error: loginValidationErr} = loginValidation.validate({username, password});
         if (!loginValidation) return res.send(loginValidationErr);
 
-        const user = await userCollection.findOne(email);
+        const user = await userCollection.findOne(username);
 
         if (!user) {
             return res.status(404).json({
