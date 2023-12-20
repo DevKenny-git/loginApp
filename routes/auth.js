@@ -8,7 +8,7 @@ const {createToken} = require("../usedToken");
 require("dotenv").config();
 const {registerValidation, otpValidation, loginValidation} = require("../validation");
 const bcrypt = require("bcrypt");
-const {otpCollection} = required("../schema/otpSchema");
+const {otpCollection} = require("../schema/otpSchema");
 
 router.post("/register", async (req, res) => {
     const {username, firstName, lastName, email, password} = req.body;
